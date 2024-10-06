@@ -30,20 +30,21 @@ exports.app.post("/sum", (req, res) => __awaiter(void 0, void 0, void 0, functio
             message: "Invalid Inputs",
         });
     }
-    const answer = parsedBody.data.a + parsedBody.data.b;
-    const result = yield db_1.prismaClient.sum.create({
+    const answer = parsedBody.data.a - parsedBody.data.b;
+    const response = yield db_1.prismaClient.sum.create({
         data: {
             a: parsedBody.data.a,
             b: parsedBody.data.b,
             result: answer
         }
     });
+    // console.log(result);
     return res.status(200).json({
         sucess: true,
         message: "",
         answer,
-        // a : result.a,
-        // b : result.b,
-        // id : result.id
+        a: response.a,
+        b: response.b,
+        id: response.id
     });
 }));

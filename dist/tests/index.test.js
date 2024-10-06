@@ -41,6 +41,12 @@ vitest_1.vi.mock('../db', () => {
         (0, vitest_1.expect)(res.body.answer).toBe(15);
     }));
     (0, vitest_1.it)("testing negative numbers", () => __awaiter(void 0, void 0, void 0, function* () {
+        __mocks__1.prismaClient.sum.create.mockResolvedValue({
+            id: 1,
+            a: 5,
+            b: 10,
+            result: 15
+        });
         const res = yield (0, supertest_1.default)(index_1.app).post("/sum").send({
             a: -5,
             b: -10
@@ -49,6 +55,12 @@ vitest_1.vi.mock('../db', () => {
         (0, vitest_1.expect)(res.body.answer).toBe(-15);
     }));
     (0, vitest_1.it)("testing For Bad Inputs", () => __awaiter(void 0, void 0, void 0, function* () {
+        __mocks__1.prismaClient.sum.create.mockResolvedValue({
+            id: 1,
+            a: 5,
+            b: 10,
+            result: 15
+        });
         const res = yield (0, supertest_1.default)(index_1.app).post("/sum").send({
             a: "kunal",
             b: 'a'
