@@ -1,11 +1,10 @@
-name: CI/CD For Testing Pipeline
+name: CI/CD Pipeline
 
 on:
-   pull_request: 
-     branches: 
-        - main
+  pull_request:
+    branches:
+      - main
 
- 
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,9 +19,9 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        working-directory: Testing Express App
+        working-directory: 5-express-vitest-prisma
         run: npm install && npx prisma generate
 
       - name: Run tests
-        working-directory: Testing Express App
-        run: npm run test     
+        working-directory: 5-express-vitest-prisma
+        run: npm run test  
