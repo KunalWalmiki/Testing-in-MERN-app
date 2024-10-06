@@ -1,0 +1,26 @@
+{
+  "name": "testing-express-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@types/express": "^5.0.0",
+    "ts-jest": "^29.2.5",
+    "vitest-mock-extended": "^2.0.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.20.0",
+    "@types/supertest": "^6.0.2",
+    "express": "^4.21.0",
+    "prisma": "^5.20.0",
+    "supertest": "^7.0.0",
+    "zod": "^3.23.8"
+  }
+}
